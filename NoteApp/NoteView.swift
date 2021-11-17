@@ -47,7 +47,11 @@ struct TextView: UIViewRepresentable {
             self.parent = textView
         }
         func updateAttributedString() -> NSAttributedString {
-            let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .largeTitle)]
+            let attrs: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font :
+                UIFont.preferredFont(forTextStyle: .largeTitle),
+                NSAttributedString.Key.strikethroughStyle:NSUnderlineStyle
+                    .single.rawValue,
+                NSAttributedString.Key.strikethroughColor : UIColor.red]
             let attrString = NSAttributedString(string: parent.text, attributes: attrs)
             return attrString
         }
