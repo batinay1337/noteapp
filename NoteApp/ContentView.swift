@@ -48,7 +48,7 @@ struct ContentView: View {
                             }
                         Spacer()
                         HStack {
-                            Text("")
+                            Text("") // bug?
                             NavigationLink(destination: NoteView()) {
                                 Image(systemName: "square.and.pencil")
                             }
