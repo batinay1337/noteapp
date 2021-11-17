@@ -18,14 +18,20 @@ struct ContentView: View {
                 List {
                     TextField("Search", text: $searchString)
                         Section(header:
-                        Text("On my device")
+                        Text("On My Device")
                             .font(.title3)
                             .fontWeight(.bold)
                             .foregroundColor(.blue)) {
+                            if noteApp.folders.count > 0 {
+                                FolderCell(name: "All on My Device")
+                            }
+                            FolderCell(name: "Notes")
                             ForEach(noteApp.folders) { folder in
                                 FolderCell(name: folder.name)
-                                
                         }
+                            .onDelete(perform: { indexSet in
+                                noteApp.folders.remove(atOffsets: indexSet)
+                            })
                     }
                     .textCase(nil)
                 }
@@ -33,9 +39,7 @@ struct ContentView: View {
                 .navigationTitle("Folders")
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing){
-                        Button("Edit"){
-                            print("Edit")
-                        }
+                        EditButton()
                     }
                     ToolbarItemGroup(placement: .bottomBar){
                         Image(systemName: "folder.badge.plus")
@@ -47,7 +51,7 @@ struct ContentView: View {
                 }
             }
             if showingPopover {
-                NewFolderView()
+                CreateNewFolder($showingPopover, with: noteApp)
             }
         }
     }
@@ -63,8 +67,17 @@ struct FolderCell: View {
     }
 }
 
-struct NewFolderView: View {
+struct CreateNewFolder: View {
+    @ObservedObject var noteApp: NoteApp
+    @Binding var showingPopover: Bool
+    
     @State var newFolderName = ""
+    
+    init(_ showingPopover: Binding<Bool>, with noteApp: NoteApp){
+        self._showingPopover = showingPopover
+        self.noteApp = noteApp
+    }
+    
     var body: some View {
         GeometryReader { geo in
             ZStack {
@@ -89,7 +102,10 @@ struct NewFolderView: View {
                             Text("Cancel")
                                 .frame(maxWidth: .infinity)
                         }
-                        Button(action: {print("Save")}) {
+                        Button(action: {
+                            noteApp.folders.append(Folder(name: newFolderName))
+                            showingPopover.toggle()
+                        }) {
                             Text("Save")
                                 .frame(maxWidth: .infinity)
                         }
