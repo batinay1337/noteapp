@@ -43,10 +43,13 @@ struct ContentView: View {
                     }
                     ToolbarItemGroup(placement: .bottomBar){
                         Image(systemName: "folder.badge.plus")
-                            .onTapGesture(perform: {
+                            .onTapGesture {
                                 showingPopover.toggle()
-                            })
-                        Image(systemName: "square.and.pencil")
+                            }
+                        Spacer()
+                        NavigationLink(destination: NoteView()) {
+                            Image(systemName: "square.and.pencil")
+                        }
                     }
                 }
             }
@@ -60,9 +63,11 @@ struct ContentView: View {
 struct FolderCell: View {
     var name: String
     var body: some View {
-        HStack{
-            Image(systemName: "folder")
-            Text(name)
+        NavigationLink(destination: FolderView(folderName: name)) {
+            HStack{
+                Image(systemName: "folder")
+                Text(name)
+            }
         }
     }
 }

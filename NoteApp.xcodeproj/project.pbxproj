@@ -13,6 +13,8 @@
 		9FB396BC2728CE3D00E66276 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB396BB2728CE3D00E66276 /* Preview Assets.xcassets */; };
 		9FB396C72728CE3D00E66276 /* NoteAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB396C62728CE3D00E66276 /* NoteAppTests.swift */; };
 		9FB396D22728CE3D00E66276 /* NoteAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB396D12728CE3D00E66276 /* NoteAppUITests.swift */; };
+		9FC3A1912745B108003645BA /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3A1902745B108003645BA /* FolderView.swift */; };
+		9FC3A1932745B59D003645BA /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC3A1922745B59D003645BA /* NoteView.swift */; };
 		9FCC7F7E272DEAA0007FF9CC /* NoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCC7F7D272DEAA0007FF9CC /* NoteApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		9FB396CD2728CE3D00E66276 /* NoteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB396D12728CE3D00E66276 /* NoteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppUITests.swift; sourceTree = "<group>"; };
 		9FB396D32728CE3D00E66276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC3A1902745B108003645BA /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		9FC3A1922745B59D003645BA /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		9FCC7F7D272DEAA0007FF9CC /* NoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,8 @@
 				9FB396B42728CE3D00E66276 /* NoteAppApp.swift */,
 				9FB396B62728CE3D00E66276 /* ContentView.swift */,
 				9FCC7F7D272DEAA0007FF9CC /* NoteApp.swift */,
+				9FC3A1902745B108003645BA /* FolderView.swift */,
+				9FC3A1922745B59D003645BA /* NoteView.swift */,
 				9FB396B82728CE3D00E66276 /* Assets.xcassets */,
 				9FB396BD2728CE3D00E66276 /* Info.plist */,
 				9FB396BA2728CE3D00E66276 /* Preview Content */,
@@ -263,7 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FCC7F7E272DEAA0007FF9CC /* NoteApp.swift in Sources */,
+				9FC3A1932745B59D003645BA /* NoteView.swift in Sources */,
 				9FB396B72728CE3D00E66276 /* ContentView.swift in Sources */,
+				9FC3A1912745B108003645BA /* FolderView.swift in Sources */,
 				9FB396B52728CE3D00E66276 /* NoteAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
